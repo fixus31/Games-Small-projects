@@ -24,6 +24,7 @@ class Ball:
         paddle_pos = self.canvas.coords(self.paddle.id)
         if pos[2] >= paddle_pos[0] and pos[0] <= paddle_pos[2]:
             if pos[3] >= paddle_pos[1] and pos[3] <=  paddle_pos[3]:
+                self.x += self.paddle.x
                 return True
         return False
 
@@ -93,5 +94,3 @@ while True:
     tk.update_idletasks()
     tk.update()
     time.sleep(0.01)
-
-#tk.mainloop()
